@@ -1,0 +1,15 @@
+local SOURCE_FILES =
+	[ glob src/*.cpp ]
+	;
+
+project
+    : requirements <include>../math3d/include
+    ;
+
+exe raytracer
+	:	../libs/resource//resource/<link>static
+        /site-config//png
+        /site-config//SDL
+        /site-config//SDLmain
+		$(SOURCE_FILES)
+    ;

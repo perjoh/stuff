@@ -1,0 +1,13 @@
+import boost ;
+import testing ;
+
+boost.use-project ;
+
+project
+    : requirements <include>../include
+    ; 
+
+unit-test math3dtest : 
+	[ glob *.cpp ]
+    : <library>/boost//unit_test_framework <link>static
+	;

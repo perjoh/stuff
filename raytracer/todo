@@ -1,0 +1,12 @@
+
+    *[ ] Fix loading of Collada documents. (myresource project)
+    *[ ] Test loading of Collada documents.
+    [ ] Support for triangles/polygons. Done?
+	[ ] Change naming convention to java-style, ex. functionName(), not function_name()
+	[ ] Lighting should be calculated by scene class. CalcLightAtPoint or something like that. 
+
+	--- DONE ---
+
+	[x] Add support for triangles, improve how primitives are represented.
+	[x] Fix boost build under Linux.
+	[x] Remove the *_rt suffix from primitive class names.

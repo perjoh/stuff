@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<scene>
+	<!-- Colors -->
+	<colors>
+		<color name="col_red">
+			<red>1.0</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
+		</color>
+		<color name="col_green">
+			<red>0.0</red>
+			<green>1.0</green>
+			<blue>0.0</blue>
+		</color>
+		<color name="col_blue">
+			<red>0.0</red>
+			<green>0.0</green>
+			<blue>1.0</blue>
+		</color>
+		<color name="col_white">
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>1.0</blue>
+		</color>
+		<color name="col_light_red">
+			<red>1.0</red>
+			<green>8.0</green>
+			<blue>9.0</blue>
+		</color>
+		<color name="col_light_orange">
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>7.0</blue>
+		</color>
+	</colors>
+	<!-- Materials -->
+	<materials>
+		<material name="mat_01">
+			<color>col_red</color> 
+			<specular>1.8</specular>
+			<specular_exp>20</specular_exp>
+			<diffuse>0.9</diffuse>
+			<reflect>0.4</reflect>
+			<texture opacity="0.5">./images/test.png</texture>
+		</material>
+		<material name="mat_green_diffuse">
+			<color>col_green</color> 
+			<specular>0.8</specular>
+			<specular_exp>20</specular_exp>
+			<diffuse>0.95</diffuse>
+			<reflect>0.3</reflect>
+		</material>
+		<material name="mat_green_shiny">
+			<color>col_green</color> 
+			<specular>1.080</specular>
+			<specular_exp>20</specular_exp>
+			<diffuse>0.98</diffuse>
+			<reflect>0.5</reflect>
+		</material>
+		<material name="mat_blue_shiny">
+			<color>col_blue</color> 
+			<specular>0.85</specular>
+			<specular_exp>20</specular_exp>
+			<diffuse>0.89</diffuse>
+			<reflect>0.35</reflect>
+		</material>
+	</materials>
+	<!-- Geometry -->
+	<geometries>
+		<sphere>0.0 0.0 0.0 12.0 mat_green_diffuse</sphere>
+		<sphere>-10.0 0.0 0.0 8.0 mat_blue_shiny</sphere>
+	</geometries>
+	<!-- Lights -->
+	<lights>
+		<light>
+			<position>-70.0 50.0 0.0</position>
+			<color>col_white</color>
+			<intensity>0.5</intensity>
+		</light>
+		<light>
+			<position>70.0 50.0 0.0</position>
+			<color>col_white</color>
+			<intensity>0.5</intensity>
+		</light>
+		<light>
+			<position>0.0 50.0 0.0</position>
+			<color>col_white</color>
+			<intensity>0.5</intensity>
+		</light>
+	</lights>
+	<!-- Cameras -->
+	<cameras>
+		<camera>
+			<position>0.0 15.0 -50.0</position>
+			<look_at>0.0 0.0 0.0</look_at>
+			<focal_depth>60.0</focal_depth>
+			<type></type>
+		</camera>
+	</cameras>
+	<!-- Settings -->
+	<scene_settings>
+		<recursion_depth>4</recursion_depth>
+		<sample_size>4</sample_size>
+		<output_res>
+			<width>1024</width>
+			<height>768</height>
+		</output_res>
+	</scene_settings>
+	<!-- Statistics -->
+	<statistics>
+		<file>stat.txt</file>
+	</statistics>
+</scene>

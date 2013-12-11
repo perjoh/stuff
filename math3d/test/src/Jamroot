@@ -1,0 +1,13 @@
+
+project 
+	: requirements 
+		<include>../../include
+	;
+
+local SOURCES = [ glob *.cpp ] ;
+
+exe test : 
+	$(SOURCES)
+    /site-config//cppunit
+    /site-config//boost
+	;

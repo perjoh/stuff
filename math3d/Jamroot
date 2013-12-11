@@ -1,0 +1,7 @@
+alias math3d 
+	: # no sources
+	: # no build requirements
+	: # no default build
+	: <include>include
+	;
+

@@ -1,0 +1,10 @@
+
+	[ ] Add a policy class to Triangle so we can configure if it should keep normals as data for example. Instead of recalculating the normal each time normal() is called.
+	[ ] Intersect functions should return a T value instead of a boolean. It should be negative to indicate a miss.
+	[ ] vector.hpp:	Improve operator==, use templated unrolled loop.
+	[ ] test: Update VC project to new file structure.
+
+	--- Done ---
+
+	[x] Add clamp function to vector.
+	[x] sphere.hpp: Verify correctness of intersect functions when ray origin is outside or inside the intersecting sphere.

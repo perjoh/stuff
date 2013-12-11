@@ -1,0 +1,15 @@
+import boost ;
+import testing ;
+
+boost.use-project ;
+
+project
+    : requirements <include>../../libs/math3d/include
+    ; 
+
+unit-test raytracer_test : 
+	[ glob *.cpp ]
+    ../src/GeometryDb.cpp
+    ../../libs/resource//resource/<link>static
+    : <library>/boost//unit_test_framework <link>static
+	;

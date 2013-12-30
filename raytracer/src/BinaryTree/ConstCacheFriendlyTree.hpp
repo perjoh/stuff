@@ -92,7 +92,7 @@ namespace BinaryTree {
             }
 
             struct Traversal {
-                enum { InvalidNodeOffset = ~0 };
+                static const unsigned int InvalidNodeOffset = static_cast<unsigned int>(~0);
                 Traversal()
                     : hasLeftNode_( false )
                     , isLeaf( true )

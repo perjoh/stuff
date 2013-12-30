@@ -10,62 +10,24 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\Image\Image.cpp" />
-    <ClCompile Include="..\src\Image\PngImage.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\SceneImporter.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\math3d\include\math3d\axis.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\AxisAlignedPlane.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\box.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\helpers.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\intersections.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\line.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\mathtypes.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\matrix.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\plane.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\primitive.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\quad.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\ray.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\rect.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\Sphere.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\triangle.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\vector.hpp" />
-    <ClInclude Include="..\src\BinaryTree\BasicTree.hpp" />
-    <ClInclude Include="..\src\BinaryTree\BinaryTreeIterator.hpp" />
-    <ClInclude Include="..\src\BinaryTree\ConstCacheFriendlyTree.hpp" />
-    <ClInclude Include="..\src\GeometricTypes.hpp" />
-    <ClInclude Include="..\src\Image\Image.hpp" />
-    <ClInclude Include="..\src\Image\PngImage.hpp" />
-    <ClInclude Include="..\src\Mesh.hpp" />
-    <ClInclude Include="..\src\SceneImporter.hpp" />
-    <ClInclude Include="..\src\KdTree.hpp" />
-    <ClInclude Include="..\src\Raytracer.hpp" />
-    <ClInclude Include="..\src\TriangleMesh.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}</ProjectGuid>
+    <ProjectGuid>{4D8853C8-D93C-4552-9C61-6F60E8F33DD7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>raytracer</RootNamespace>
+    <RootNamespace>Tests</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -79,12 +41,10 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
     <IncludePath>..\..\math3d\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>d:\libs\collada-dom\dom\build\vc10-1.4;$(LibraryPath)</LibraryPath>
     <IncludePath>..\..\math3d\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -93,12 +53,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_VARIADIC_MAX=10;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libpng.lib;zlib.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,17 +70,27 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat>None</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_VARIADIC_MAX=10;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libpngd.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BinaryTreeTest.cpp" />
+    <ClCompile Include="KdTreeTest.cpp" />
+    <ClCompile Include="StaticBinaryTreeTest.cpp" />
+    <ClCompile Include="Tests.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

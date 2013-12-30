@@ -5,72 +5,35 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\BinaryTree">
       <UniqueIdentifier>{b9379c96-e488-4597-ae58-a4de2b2523a4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\resource">
-      <UniqueIdentifier>{1df878a8-5f2c-4b53-8396-722b2db00f51}</UniqueIdentifier>
+    <Filter Include="Source Files\Image">
+      <UniqueIdentifier>{4f618e24-b58f-483d-9f53-3fac90bd06a2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\resource\image">
-      <UniqueIdentifier>{4ca1f44c-046e-4daa-a21a-0d84a99b045c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\resource\mesh">
-      <UniqueIdentifier>{292ef3a9-e914-4182-ad38-4b697cee6e5e}</UniqueIdentifier>
+    <Filter Include="Source Files\Math3d">
+      <UniqueIdentifier>{5e4c2477-af77-4c9c-a48d-590450b19516}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\App.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ColladaImporter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\GeometryDb.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libs\resource\src\resource\image\image.cpp">
-      <Filter>Source Files\resource\image</Filter>
+    <ClCompile Include="..\src\Image\Image.cpp">
+      <Filter>Source Files\Image</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libs\resource\src\resource\image\png_image.cpp">
-      <Filter>Source Files\resource\image</Filter>
+    <ClCompile Include="..\src\Image\PngImage.cpp">
+      <Filter>Source Files\Image</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libs\resource\src\resource\mesh\Graph.cpp">
-      <Filter>Source Files\resource\mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libs\resource\src\resource\mesh\MeshGenerator.cpp">
-      <Filter>Source Files\resource\mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libs\resource\src\resource\mesh\vertex_buffer.cpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClCompile Include="..\src\SceneImporter.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\App.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ColladaImporter.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\GeometricTypes.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\GeometryDb.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Importer.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\KdTree.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Mesh.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Raytracer.hpp">
@@ -85,61 +48,71 @@
     <ClInclude Include="..\src\BinaryTree\ConstCacheFriendlyTree.hpp">
       <Filter>Source Files\BinaryTree</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\image\image.hpp">
-      <Filter>Source Files\resource\image</Filter>
+    <ClInclude Include="..\src\Image\Image.hpp">
+      <Filter>Source Files\Image</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\image\png_image.hpp">
-      <Filter>Source Files\resource\image</Filter>
+    <ClInclude Include="..\src\Image\PngImage.hpp">
+      <Filter>Source Files\Image</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\basic_types.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\axis.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\camera.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\AxisAlignedPlane.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\FlatBinaryTree.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\box.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\Graph.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\helpers.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\GraphVisitor.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\intersections.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\Material.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\line.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\mesh.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\mathtypes.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\MeshGenerator.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\matrix.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\polygon_buffer.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\plane.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\polygon_group.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\primitive.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\SimpleGeometryMerger.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\quad.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\TransformNode.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\ray.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\vertex_buffer.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\rect.hpp">
+      <Filter>Source Files\Math3d</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libs\resource\src\resource\mesh\vertex_stream.hpp">
-      <Filter>Source Files\resource\mesh</Filter>
+    <ClInclude Include="..\..\math3d\include\math3d\Sphere.hpp">
+      <Filter>Source Files\Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\math3d\include\math3d\triangle.hpp">
+      <Filter>Source Files\Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\math3d\include\math3d\vector.hpp">
+      <Filter>Source Files\Math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TriangleMesh.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SceneImporter.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Mesh.hpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\libs\resource\src\resource\mesh\readme.txt">
-      <Filter>Source Files\resource\mesh</Filter>
-    </Text>
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@
 #include <math3d/line.hpp>
 #include <math3d/triangle.hpp>
 
-namespace GeometricTypes {
+namespace raytracer {
 
     typedef double Float;
     typedef math3d::AxisAlignedPlane<Float> AxisAlignedPlane;
@@ -16,5 +16,7 @@ namespace GeometricTypes {
     typedef math3d::Line<Float> Line;
     typedef math3d::Triangle<Float> Triangle;
     typedef math3d::vector<Float, 3> Point;
+	typedef math3d::vector<Float, 3> Normal;
 
+	typedef math3d::vector<float, 3> Pixel;
 }

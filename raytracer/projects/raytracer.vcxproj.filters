@@ -28,11 +28,14 @@
     <ClCompile Include="..\src\SceneImporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\TestSceneGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\GeometricTypes.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\KdTree.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -109,6 +112,15 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Mesh.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GeometricObject.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TestSceneGenerator.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BasicTypes.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

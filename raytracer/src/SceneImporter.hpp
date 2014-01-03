@@ -1,16 +1,25 @@
 #pragma once
-#include "Mesh.hpp"
+#include "GeometricObject.hpp"
 
 namespace raytracer {
 
-    class SceneImporter 
+	class SceneImporterInterface
+	{
+	public :
+		virtual ~SceneImporterInterface() { }
+
+	public :
+		virtual void populateGeometricObjects( GeometricObjectArray& ) = 0;
+	};
+
+    class SceneImporter : public SceneImporterInterface
     {
     public :
 		SceneImporter( const char* resourceFilename );
         ~SceneImporter();
 
     public :
-        void populateMeshes( MeshArray& );
+        void populateGeometricObjects( GeometricObjectArray& );
 
 	private :
 		struct Impl;

@@ -1,22 +1,38 @@
 #pragma once
-#include "TriangleMesh.hpp"
 #include <vector>
+#include "TriangleMesh.hpp"
+#include "GeometricObject.hpp"
 
 namespace raytracer {
 
 	struct Vertex
 	{
 		Vertex()
-			: position( vec3f::make( .0f, .0f, .0f ) )
 		{ }
 
-		Vertex( float x, float y, float z )
-			: position( vec3f::make( x, y, z ) )
+		Vertex( Float x, Float y, Float z )
+			: position( Point::make( x, y, z ) )
 		{ }
 
-		vec3f position;
+		Point position;
+
+		typedef Float FloatType;
 	};
 
-	typedef mesh::TriangleMesh<Vertex> Mesh;
-	typedef std::vector<Mesh> MeshArray;
+	typedef mesh::TriangleMesh<Vertex> TriangleMesh;
+
+	class Mesh : public GeometricObject
+	{
+	public :
+		virtual IntersectResult intersectNearest( const Ray& ) const override;
+		virtual IntersectResult intersectNearest( const Line& ) const override;
+
+		virtual BoundingBox boundingBox() const override;
+
+		void setupSpacePartitioning();
+
+	public :
+		TriangleMesh triangleMesh;
+	};
+
 }

@@ -1,7 +1,8 @@
-#include "SceneImporter.hpp"
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
+#include "SceneImporter.hpp"
+#include "Mesh.hpp"
 
 namespace raytracer {
 
@@ -15,6 +16,7 @@ namespace raytracer {
 		const aiScene* scene_;
 	};
 
+
 	SceneImporter::SceneImporter( const char* resourceFilename )
 		: impl_(new Impl())
 	{
@@ -25,54 +27,66 @@ namespace raytracer {
 		}
 	}
 
+
 	SceneImporter::~SceneImporter()
 	{
 		delete impl_;
 	}
 
-	void SceneImporter::populateMeshes( MeshArray& meshArray )
+
+	void copyVertices( TriangleMesh& dest, const aiMesh& src )
+	{
+		const size_t NumVertices = src.mNumVertices;
+		TriangleMesh::VertexArray vertexArray(NumVertices);
+
+		for ( size_t iVertex = 0; iVertex < NumVertices; ++iVertex )
+		{
+			vertexArray[iVertex].position = 
+				Point::make(
+					src.mVertices[iVertex].x,
+					src.mVertices[iVertex].y,
+					src.mVertices[iVertex].z );
+		}
+
+		dest.setVertices( vertexArray );
+	}
+
+
+	void copyTriangles( TriangleMesh& dest, const aiMesh& src )
+	{
+		const size_t NumFaces = src.mNumFaces;
+		TriangleMesh::TriangleArray triangleArray(NumFaces);
+		for ( size_t iFace = 0; iFace < NumFaces; ++iFace )
+		{
+			assert( src.mFaces[iFace].mNumIndices == 3 );
+
+			triangleArray[iFace] = 
+				vec3i::make(
+					src.mFaces[iFace].mIndices[0],
+					src.mFaces[iFace].mIndices[1],
+					src.mFaces[iFace].mIndices[2] );
+		}
+
+		dest.setTriangles( triangleArray );
+	}
+
+
+	void SceneImporter::populateGeometricObjects( GeometricObjectArray& geometricObjectArray )
 	{
 		if ( impl_->scene_ )
 		{
 			const size_t NumMeshes = impl_->scene_->mNumMeshes;
-			meshArray.resize( NumMeshes );
+			geometricObjectArray.reserve( NumMeshes );
 
 			for ( size_t iMesh = 0; iMesh < NumMeshes; ++iMesh )
 			{
 				const aiMesh* mesh = impl_->scene_->mMeshes[iMesh];
 
-				{
-					const size_t NumVertices = mesh->mNumVertices;
-					Mesh::VertexArray vertexArray(NumVertices);
+				Mesh* newMesh = new Mesh();
+				geometricObjectArray.push_back( newMesh );
 
-					for ( size_t iVertex = 0; iVertex < NumVertices; ++iVertex )
-					{
-						vertexArray[iVertex].position = 
-							vec3f::make(
-								mesh->mVertices[iVertex].x,
-								mesh->mVertices[iVertex].y,
-								mesh->mVertices[iVertex].z );
-					}
-
-					meshArray[iMesh].setVertices(vertexArray);
-				}
-
-				{
-					const size_t NumFaces = mesh->mNumFaces;
-					Mesh::TriangleArray triangleArray(NumFaces);
-					for ( size_t iFace = 0; iFace < NumFaces; ++iFace )
-					{
-						assert( mesh->mFaces[iFace].mNumIndices == 3 );
-
-						triangleArray[iFace] = 
-							vec3i::make(
-								mesh->mFaces[iFace].mIndices[0],
-								mesh->mFaces[iFace].mIndices[1],
-								mesh->mFaces[iFace].mIndices[2] );
-					}
-
-					meshArray[iMesh].setTriangles(triangleArray);
-				}
+				copyVertices( newMesh->triangleMesh, *mesh );
+				copyTriangles( newMesh->triangleMesh, *mesh );
 			}
 		}
 	}

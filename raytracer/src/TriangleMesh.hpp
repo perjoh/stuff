@@ -261,6 +261,26 @@ namespace mesh {
 
     public :
         // Bounding volume
+		math3d::Aabb<typename Vertex::FloatType> makeBoundingBox() 
+		{
+			typedef math3d::vector<Vertex::FloatType> Vector;
+			Vector min( vertexArray_.front().position );
+			Vector max( min );
+
+			for ( auto it : vertexArray_ )
+			{
+				for ( int i = 0; i < 3; ++i )
+				{
+					if ( min[i] < it->position[i] )
+						min[i] = it->position[i];
+
+					if ( max[i] > it->position[i] )
+						max[i] = it->position[i];
+				}
+			}
+
+			return math3d::Aabb<Vertex::FloatType>( min, max );
+		}
 
     public :
         // Intersect
@@ -285,6 +305,7 @@ namespace mesh {
         vec2f uv;
 
         enum { ExpectedByteSize = (3+3+2)*4 };
+		typedef float FloatType;
     };
 
 	BOOST_STATIC_ASSERT( sizeof(float) == 4 );

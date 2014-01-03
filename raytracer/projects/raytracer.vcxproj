@@ -14,7 +14,9 @@
     <ClCompile Include="..\src\Image\Image.cpp" />
     <ClCompile Include="..\src\Image\PngImage.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Mesh.cpp" />
     <ClCompile Include="..\src\SceneImporter.cpp" />
+    <ClCompile Include="..\src\TestSceneGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\math3d\include\math3d\axis.hpp" />
@@ -36,13 +38,15 @@
     <ClInclude Include="..\src\BinaryTree\BasicTree.hpp" />
     <ClInclude Include="..\src\BinaryTree\BinaryTreeIterator.hpp" />
     <ClInclude Include="..\src\BinaryTree\ConstCacheFriendlyTree.hpp" />
-    <ClInclude Include="..\src\GeometricTypes.hpp" />
+    <ClInclude Include="..\src\GeometricObject.hpp" />
+    <ClInclude Include="..\src\BasicTypes.hpp" />
     <ClInclude Include="..\src\Image\Image.hpp" />
     <ClInclude Include="..\src\Image\PngImage.hpp" />
     <ClInclude Include="..\src\Mesh.hpp" />
     <ClInclude Include="..\src\SceneImporter.hpp" />
     <ClInclude Include="..\src\KdTree.hpp" />
     <ClInclude Include="..\src\Raytracer.hpp" />
+    <ClInclude Include="..\src\TestSceneGenerator.hpp" />
     <ClInclude Include="..\src\TriangleMesh.hpp" />
   </ItemGroup>
   <ItemGroup>

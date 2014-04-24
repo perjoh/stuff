@@ -88,7 +88,7 @@ namespace math3d {
 		}
 
 	public :
-		const Aabb<value_type> getBoundingBox() const {
+		const Aabb<value_type> getBoundingBox(intersectionPoint) const {
 			return Aabb<value_type>( min(), max() );
 		}
 

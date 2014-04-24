@@ -16,6 +16,7 @@
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Mesh.cpp" />
     <ClCompile Include="..\src\SceneImporter.cpp" />
+    <ClCompile Include="..\src\Sphere.cpp" />
     <ClCompile Include="..\src\TestSceneGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -46,11 +47,9 @@
     <ClInclude Include="..\src\SceneImporter.hpp" />
     <ClInclude Include="..\src\KdTree.hpp" />
     <ClInclude Include="..\src\Raytracer.hpp" />
+    <ClInclude Include="..\src\Sphere.hpp" />
     <ClInclude Include="..\src\TestSceneGenerator.hpp" />
     <ClInclude Include="..\src\TriangleMesh.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}</ProjectGuid>

@@ -1,5 +1,6 @@
 #pragma once
 #include "GeometricObject.hpp"
+#include "Camera.hpp"
 
 namespace raytracer {
 
@@ -10,7 +11,9 @@ namespace raytracer {
 
 	public :
 		virtual void populateGeometricObjects( GeometricObjectArray& ) = 0;
+		virtual void getCamera( Camera& ) = 0;
 	};
+
 
     class SceneImporter : public SceneImporterInterface
     {
@@ -19,7 +22,8 @@ namespace raytracer {
         ~SceneImporter();
 
     public :
-        void populateGeometricObjects( GeometricObjectArray& );
+        void populateGeometricObjects( GeometricObjectArray& ) override;
+		void getCamera( Camera& ) override;
 
 	private :
 		struct Impl;

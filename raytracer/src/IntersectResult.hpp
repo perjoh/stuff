@@ -9,12 +9,12 @@ namespace raytracer {
 			: ok(false)
 		{ }
 
-		IntersectResult( bool ok_, const Normal& normal_ )
+		IntersectResult( bool ok_, const IntersectionPoint& intersectionPoint_ )
 			: ok(ok_)
-			, normal(normal_)
+			, intersectionPoint(intersectionPoint_)
 		{ }
 
 		bool ok;
-		Normal normal;
+		IntersectionPoint intersectionPoint;
 	};
 }

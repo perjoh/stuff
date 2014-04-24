@@ -4,6 +4,56 @@
 #include <boost/shared_ptr.hpp>
 #include "ScopeExit.hpp"
 
+class PixelBuffer32
+{
+public :
+	PixelBuffer32( unsigned int width, unsigned int height )
+		: width_(width)
+		, height_(height)
+		, pixels_( width*height, 0 )
+	{ }
+
+public :
+	unsigned int width() const { return width_; }
+	unsigned int height() const { return height_; }
+
+	unsigned int pitch() const { return width()*4; }
+	unsigned int sizeBytes() const { return pitch()*height(); }
+
+	const void* pixels() const { return &pixels_[0]; }
+
+public :
+	void setPixel( unsigned int x, unsigned int y, Uint32 color )
+	{
+		if ( x < width() && y < height() )
+		{
+			pixels_[width()*y + x] = color;
+		}
+	}
+
+private :
+	unsigned int width_;
+	unsigned int height_;
+
+	std::vector<Uint32> pixels_;
+};
+
+class App
+{
+public :
+	App( PixelBuffer32& pixelBuffer )
+		: pixelBuffer_( pixelBuffer )
+	{
+	}
+
+private :
+	PixelBuffer32& pixelBuffer_;
+
+private :
+	App( const App& );
+	App& operator=( const App& );
+};
+
 
 int main( int /*argc*/, char * /*argv*/[] ) 
 {
@@ -65,7 +115,8 @@ int main( int /*argc*/, char * /*argv*/[] )
 		::SDL_DestroyTexture(texture);
 	});
 
-	std::vector<Uint32> pixels(ScreenWidth*ScreenHeight, 0xff00ff00);
+	PixelBuffer32 pixelBuffer( ScreenWidth, ScreenHeight );
+	App app(pixelBuffer);
 
 	bool keepRunning = true;
 	while (keepRunning)
@@ -79,7 +130,11 @@ int main( int /*argc*/, char * /*argv*/[] )
 			}
 		}
 
-		::SDL_UpdateTexture(texture, nullptr, &pixels[0], ScreenWidth*sizeof(Uint32));
+		::SDL_UpdateTexture(
+			texture, 
+			nullptr,
+			pixelBuffer.pixels(), 
+			pixelBuffer.pitch());
 
 		//::SDL_RenderClear(renderer);
 		::SDL_RenderCopy(renderer, texture, nullptr, nullptr);

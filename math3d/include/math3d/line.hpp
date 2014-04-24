@@ -52,7 +52,7 @@ namespace math3d
 			return ray_.origin();
 		}
 
-		vector_type dir() const { // TODO rename to direction
+		vector_type direction() const {
 			return ray_.direction();
 		}
 

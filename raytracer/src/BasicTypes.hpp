@@ -5,6 +5,7 @@
 #include <math3d/ray.hpp>
 #include <math3d/line.hpp>
 #include <math3d/triangle.hpp>
+#include <math3d/intersections.hpp>
 
 namespace raytracer {
 
@@ -17,6 +18,7 @@ namespace raytracer {
     typedef math3d::Triangle<Float> Triangle;
     typedef math3d::vector<Float, 3> Point;
 	typedef math3d::vector<Float, 3> Normal;
+	typedef math3d::intersect::Intersection_point<Float> IntersectionPoint;
 
 	typedef math3d::vector<float, 3> Pixel;
 }

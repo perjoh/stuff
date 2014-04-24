@@ -1,1 +1,15 @@
-// Raytracer - Given one or more rays and a SpatialDb, it performs actual ray tracing and produces a rgb color as a result.
+#pragma once
+#include "BasicTypes.hpp"
+
+namespace raytracer {
+
+	class Raytracer
+	{
+	public :
+		Pixel trace( unsigned int x, unsigned int y ) const;
+
+	private :
+		Pixel traceFraction( Float x, Float y ) const;
+	};
+
+}

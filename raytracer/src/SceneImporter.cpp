@@ -90,4 +90,9 @@ namespace raytracer {
 			}
 		}
 	}
+
+
+	void SceneImporter::getCamera( Camera& )
+	{
+	}
 }

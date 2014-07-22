@@ -1,4 +1,6 @@
-#pragma once
+#ifndef math3d_intersections_hpp
+#define math3d_intersections_hpp
+
 #include "helpers.hpp"
 #include <limits>
 
@@ -569,3 +571,5 @@ namespace intersect {
     }
 
 } }
+
+#endif // math3d_intersections_hpp

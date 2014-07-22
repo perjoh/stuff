@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "raytracer", "raytracer.vcxproj", "{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "..\tests\Tests.vcxproj", "{4D8853C8-D93C-4552-9C61-6F60E8F33DD7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RaytracerTest", "..\tests\RaytracerTest.vcxproj", "{68FF903B-619D-49AF-8A9D-139F254F56BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}.Debug|Win32.Build.0 = Debug|Win32
 		{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}.Release|Win32.ActiveCfg = Release|Win32
 		{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}.Release|Win32.Build.0 = Release|Win32
-		{4D8853C8-D93C-4552-9C61-6F60E8F33DD7}.Debug|Win32.ActiveCfg = Debug|Win32
-		{4D8853C8-D93C-4552-9C61-6F60E8F33DD7}.Debug|Win32.Build.0 = Debug|Win32
-		{4D8853C8-D93C-4552-9C61-6F60E8F33DD7}.Release|Win32.ActiveCfg = Release|Win32
-		{4D8853C8-D93C-4552-9C61-6F60E8F33DD7}.Release|Win32.Build.0 = Release|Win32
+		{68FF903B-619D-49AF-8A9D-139F254F56BB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{68FF903B-619D-49AF-8A9D-139F254F56BB}.Debug|Win32.Build.0 = Debug|Win32
+		{68FF903B-619D-49AF-8A9D-139F254F56BB}.Release|Win32.ActiveCfg = Release|Win32
+		{68FF903B-619D-49AF-8A9D-139F254F56BB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,13 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Image\Image.cpp" />
-    <ClCompile Include="..\src\Image\PngImage.cpp" />
+    <ClCompile Include="..\src\App.cpp" />
+    <ClCompile Include="..\src\ColladaImporter.cpp" />
+    <ClCompile Include="..\src\GeometryDb.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Mesh.cpp" />
-    <ClCompile Include="..\src\SceneImporter.cpp" />
-    <ClCompile Include="..\src\Sphere.cpp" />
-    <ClCompile Include="..\src\TestSceneGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\math3d\include\math3d\axis.hpp" />
@@ -36,20 +33,20 @@
     <ClInclude Include="..\..\math3d\include\math3d\Sphere.hpp" />
     <ClInclude Include="..\..\math3d\include\math3d\triangle.hpp" />
     <ClInclude Include="..\..\math3d\include\math3d\vector.hpp" />
+    <ClInclude Include="..\src\App.hpp" />
     <ClInclude Include="..\src\BinaryTree\BasicTree.hpp" />
     <ClInclude Include="..\src\BinaryTree\BinaryTreeIterator.hpp" />
     <ClInclude Include="..\src\BinaryTree\ConstCacheFriendlyTree.hpp" />
-    <ClInclude Include="..\src\GeometricObject.hpp" />
-    <ClInclude Include="..\src\BasicTypes.hpp" />
-    <ClInclude Include="..\src\Image\Image.hpp" />
-    <ClInclude Include="..\src\Image\PngImage.hpp" />
-    <ClInclude Include="..\src\Mesh.hpp" />
-    <ClInclude Include="..\src\SceneImporter.hpp" />
+    <ClInclude Include="..\src\ColladaImporter.hpp" />
+    <ClInclude Include="..\src\GeometricTypes.hpp" />
+    <ClInclude Include="..\src\GeometryDb.hpp" />
+    <ClInclude Include="..\src\Importer.hpp" />
     <ClInclude Include="..\src\KdTree.hpp" />
+    <ClInclude Include="..\src\Mesh.hpp" />
     <ClInclude Include="..\src\Raytracer.hpp" />
-    <ClInclude Include="..\src\Sphere.hpp" />
-    <ClInclude Include="..\src\TestSceneGenerator.hpp" />
-    <ClInclude Include="..\src\TriangleMesh.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}</ProjectGuid>
@@ -83,25 +80,24 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>$(LibraryPath)</LibraryPath>
-    <IncludePath>..\..\math3d\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>d:\libs\collada-dom\dom\build\vc10-1.4;$(LibraryPath)</LibraryPath>
-    <IncludePath>..\..\math3d\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\math3d\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libpng.lib;zlib.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcollada14dom22-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -113,14 +109,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat>None</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libpngd.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcollada14dom22.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

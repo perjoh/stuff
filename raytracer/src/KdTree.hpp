@@ -1,7 +1,9 @@
 #pragma once
 #include "BinaryTree/ConstCacheFriendlyTree.hpp"
-#include "GeometricTypes.hpp"
+#include "BasicTypes.hpp"
 #include <limits>
+
+namespace GeometricTypes = raytracer;
 
     template <typename Entity>
     class KdTree {

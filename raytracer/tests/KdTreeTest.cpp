@@ -4,11 +4,11 @@
 typedef BinaryTree::BasicTree<int> BinTree;
 typedef BinTree::Node Node;
 
-using namespace GeometricTypes;
+using namespace raytracer;
 
 namespace 
 {
-    const Point makePoint(Float x, Float y, Float z) 
+    const Point3d makePoint(Float x, Float y, Float z) 
     { 
         return math3d::make_vec(x, y, z);
     }

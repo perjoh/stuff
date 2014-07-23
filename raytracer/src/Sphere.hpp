@@ -1,21 +1,24 @@
 #pragma once
 #include <math3d/Sphere.hpp>
 #include "BasicTypes.hpp"
-#include "GeometricObject.hpp"
+#include "RayTracable.hpp"
 
 namespace raytracer {
 
-	class Sphere : public GeometricObject
+	class Sphere : public RayTracable
 	{
 	public :
-		Sphere( const Point& center, Float radius )
+		Sphere( const Point3d& center, Float radius )
 			: sphere_( center, radius )
 		{ }
 
-		virtual IntersectResult intersectNearest( const Ray& ) const override;
-		virtual IntersectResult intersectNearest( const Line& ) const override;
+		void prepare() override 
+		{ }
 
-		virtual BoundingBox boundingBox() const override;
+		IntersectResult intersectNearest( const Ray& ) const override;
+		IntersectResult intersectNearest( const Line& ) const override;
+
+		BoundingBox boundingBox() const override;
 
 	private :
 		typedef math3d::Sphere<Float> SphereType;

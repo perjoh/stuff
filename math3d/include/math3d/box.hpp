@@ -30,6 +30,26 @@ namespace math3d {
 		}
 
 	public :
+		// Grow box so that it contains both the original and 'other'.
+		void grow( const Aabb& other )
+		{
+			for ( size_t i = 0; i < vector_type::size; ++i )
+			{
+				if ( max()[i] < other.max()[i] )
+					max_[i] = other.max_[i];
+				if ( other.min()[i] < min()[i] )
+					min_[i] = other.min_[i];
+			}
+		}
+
+		Aabb grow( const Aabb& other ) const
+		{
+			Aabb result( *this );
+			result.grow( other );
+			return result;
+		}
+
+	public :
 		const vector_type& min() const {
 			return min_;
 		}

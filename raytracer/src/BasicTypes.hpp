@@ -16,9 +16,9 @@ namespace raytracer {
     typedef math3d::Ray<Float> Ray;
     typedef math3d::Line<Float> Line;
     typedef math3d::Triangle<Float> Triangle;
-    typedef math3d::vector<Float, 3> Point;
+    typedef math3d::vector<Float, 3> Point3d;
 	typedef math3d::vector<Float, 3> Normal;
-	typedef math3d::intersect::Intersection_point<Float> IntersectionPoint;
+	typedef math3d::intersect::Intersection<Float> Intersection;
 
 	typedef math3d::vector<float, 3> Pixel;
 }

@@ -52,7 +52,7 @@ namespace math3d
 			return ray_.origin();
 		}
 
-		vector_type dir() const { // TODO rename to direction
+		vector_type direction() const {
 			return ray_.direction();
 		}
 
@@ -61,7 +61,7 @@ namespace math3d
 		}
 
 		vector_type sample( value_type t ) const {
-			return point_a() + dir() * t;
+			return point_a() + direction() * t;
 		}
 
 

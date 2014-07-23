@@ -13,9 +13,14 @@ namespace raytracer {
 			const Float t = sphere_.intersect(line);
 			if ( t > 0 )
 			{
-				const Point point( line.direction()*t + line.origin() );
-				const Point normal( (point - sphere_.center())/sphere_.radius() );
-				return IntersectResult( true, IntersectionPoint( point, normal ) );
+				const Point3d point( line.direction()*t + line.origin() );
+				const Point3d normal( (point - sphere_.center())/sphere_.radius() );
+
+				return IntersectResult( 
+					true, 
+					Intersection( 
+						point, 
+						normal ) );
 			}
 
 			return IntersectResult(); 

@@ -11,42 +11,48 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\App.cpp" />
-    <ClCompile Include="..\src\ColladaImporter.cpp" />
-    <ClCompile Include="..\src\GeometryDb.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\math3d\include\math3d\axis.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\AxisAlignedPlane.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\box.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\helpers.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\intersections.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\line.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\mathtypes.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\matrix.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\plane.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\primitive.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\quad.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\ray.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\rect.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\Sphere.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\triangle.hpp" />
-    <ClInclude Include="..\..\math3d\include\math3d\vector.hpp" />
-    <ClInclude Include="..\src\App.hpp" />
-    <ClInclude Include="..\src\BinaryTree\BasicTree.hpp" />
-    <ClInclude Include="..\src\BinaryTree\BinaryTreeIterator.hpp" />
-    <ClInclude Include="..\src\BinaryTree\ConstCacheFriendlyTree.hpp" />
-    <ClInclude Include="..\src\ColladaImporter.hpp" />
-    <ClInclude Include="..\src\GeometricTypes.hpp" />
-    <ClInclude Include="..\src\GeometryDb.hpp" />
-    <ClInclude Include="..\src\Importer.hpp" />
-    <ClInclude Include="..\src\KdTree.hpp" />
-    <ClInclude Include="..\src\Mesh.hpp" />
-    <ClInclude Include="..\src\Raytracer.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\axis.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\AxisAlignedPlane.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\box.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\helpers.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\intersections.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\line.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\mathtypes.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\matrix.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\plane.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\primitive.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\quad.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\ray.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\rect.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\Sphere.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\triangle.hpp" />
+    <ClInclude Include="..\math3d\include\math3d\vector.hpp" />
+    <ClInclude Include="src\App.hpp" />
+    <ClInclude Include="src\BasicTypes.hpp" />
+    <ClInclude Include="src\BinaryTree\BasicTree.hpp" />
+    <ClInclude Include="src\BinaryTree\BinaryTreeIterator.hpp" />
+    <ClInclude Include="src\BinaryTree\ConstCacheFriendlyTree.hpp" />
+    <ClInclude Include="src\Camera.hpp" />
+    <ClInclude Include="src\IntersectResult.hpp" />
+    <ClInclude Include="src\KdTree.hpp" />
+    <ClInclude Include="src\RayTracable.hpp" />
+    <ClInclude Include="src\Raytracer.hpp" />
+    <ClInclude Include="src\SceneImporter.hpp" />
+    <ClInclude Include="src\ScopeExit.hpp" />
+    <ClInclude Include="src\Sphere.hpp" />
+    <ClInclude Include="src\TestSceneGenerator.hpp" />
+    <ClInclude Include="src\TriangleMesh.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\SceneImporter.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
+    <ClCompile Include="src\TestSceneGenerator.cpp" />
+    <ClCompile Include="src\TriangleMesh.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}</ProjectGuid>
@@ -89,10 +95,10 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\math3d\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\math3d\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

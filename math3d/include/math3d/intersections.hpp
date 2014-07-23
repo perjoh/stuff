@@ -9,21 +9,20 @@ namespace intersect {
 
 	//!
 	template <typename T>
-	struct Intersection_point
+	struct Intersection
 	{
 		typedef vector<T, 3> vector_type;
 
-		Intersection_point() :
-			point_( 0 ),
-			normal_( 0 )
+		Intersection() 
+			: point_( 0 )
+			, normal_( 0 )
 		{ }
 
-		Intersection_point( const vector_type& p, const vector_type& n ) :
-			point_( p ),
-			normal_( n )
-		{ }
-
-		virtual ~Intersection_point()
+		Intersection( 
+			const vector_type& point, 
+			const vector_type& normal ) 
+			: point_( point )
+			, normal_( normal )
 		{ }
 
 	public :
@@ -35,17 +34,6 @@ namespace intersect {
 		const vector_type& normal() const
 		{
 			return normal_;
-		}
-
-	public :
-		void set_point( const vector_type& p )
-		{
-			point_ = p;
-		}
-
-		void set_normal( const vector_type& n )
-		{
-			normal_ = n;
 		}
 
 	private :

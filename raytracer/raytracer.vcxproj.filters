@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\BinaryTree">
+      <UniqueIdentifier>{b9379c96-e488-4597-ae58-a4de2b2523a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math3d">
+      <UniqueIdentifier>{b6a04a54-5e05-4031-8138-23736f8d69e9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\App.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BasicTypes.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IntersectResult.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KdTree.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raytracer.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneImporter.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScopeExit.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sphere.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TestSceneGenerator.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TriangleMesh.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\axis.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\AxisAlignedPlane.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\box.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\helpers.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\intersections.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\line.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\mathtypes.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\matrix.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\plane.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\primitive.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\quad.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\ray.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\rect.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\Sphere.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\triangle.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\math3d\include\math3d\vector.hpp">
+      <Filter>Source Files\math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BinaryTree\BasicTree.hpp">
+      <Filter>Source Files\BinaryTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BinaryTree\BinaryTreeIterator.hpp">
+      <Filter>Source Files\BinaryTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BinaryTree\ConstCacheFriendlyTree.hpp">
+      <Filter>Source Files\BinaryTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RayTracable.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneImporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TestSceneGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TriangleMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -20,7 +20,10 @@ namespace math3d {
         TriangleInterface()
         { }
 
-		TriangleInterface( const vector_type& pointA, const vector_type& pointB, const vector_type& pointC ) 
+		TriangleInterface( 
+			const vector_type& pointA, 
+			const vector_type& pointB, 
+			const vector_type& pointC ) 
         : impl_( pointA, pointB, pointC )
 	   	{ }
 
@@ -121,7 +124,10 @@ namespace math3d {
         TriangleInternals()
         { }
         
-        TriangleInternals( const vector_type& pointA, const vector_type& pointB, const vector_type& pointC )
+        TriangleInternals( 
+			const vector_type& pointA, 
+			const vector_type& pointB, 
+			const vector_type& pointC )
             : pointA_( pointA )
             , pointB_( pointB )
             , pointC_( pointC )
@@ -156,7 +162,10 @@ namespace math3d {
     template <typename Float>
     struct Triangle : public TriangleInterface<TriangleInternals<Float> > {
 
-        Triangle( const vector_type& pointA, const vector_type& pointB, const vector_type& pointC )
+        Triangle( 
+			const vector_type& pointA, 
+			const vector_type& pointB, 
+			const vector_type& pointC )
             : TriangleInterface( pointA, pointB, pointC )
         { }
     };

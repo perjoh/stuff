@@ -16,10 +16,10 @@ namespace raytracer {
 
 	private :
 		void prepare() override;
-
-		IntersectResult intersectNearest( const Ray& ) const override;
 		IntersectResult intersectNearest( const Line& ) const override;
+		BoundingBox boundingBox() const override;
 
+	private :
 		template <typename RayType>
 		IntersectResult intersectNearestImpl( const RayType& ray ) const
 		{
@@ -51,8 +51,6 @@ namespace raytracer {
 
 			return IntersectResult();
 		}
-
-		BoundingBox boundingBox() const override;
 
 	private :
 		void calculateNormals();

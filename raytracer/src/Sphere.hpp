@@ -15,7 +15,7 @@ namespace raytracer {
 		void prepare() override 
 		{ }
 
-		IntersectResult intersectNearest( const Ray& ) const override;
+		//IntersectResult intersectNearest( const Ray& ) const override;
 		IntersectResult intersectNearest( const Line& ) const override;
 
 		BoundingBox boundingBox() const override;

@@ -3,20 +3,47 @@
 
 namespace raytracer {
 
-	struct IntersectResult
+	class RayTracable;
+
+	class IntersectResult
 	{
+	public:
 		IntersectResult()
-			: ok(false)
+			: intersected_(nullptr)
 		{ }
 
 		IntersectResult(
-			bool ok_, 
+			RayTracable* intersected, 
 			const Intersection& i )
-			: ok(ok_)
-			, intersection( i )
+			: intersected_(intersected)
+			, intersection_( i )
 		{ }
 
-		bool ok;
-		Intersection intersection;
+		explicit operator bool() const {
+			return intersected_ != nullptr;
+		}
+
+		const Intersection& intersection() const {
+			return intersection_;
+		}
+
+	private :
+		RayTracable* intersected_;
+		Intersection intersection_;
 	};
+
+	ColorResult Shader(Line& line, int depth)
+	{
+		if (intersection)
+		{
+			ColorResult result;
+			if (depth < tracer.GetMaxDepth())
+			{
+				return result + tracer.trace(reflectedRay)*0.2;
+			}
+		}
+
+		return ColorResult(false);
+	}
+
 }

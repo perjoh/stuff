@@ -1,19 +1,30 @@
 #pragma once
-#include <boost/function.hpp>
 
-class ScopeExit {
+template <typename Fun>
+class ScopeExit_ {
 public :
-	ScopeExit( boost::function0<void> funType )
-		: funType_(funType)
+	ScopeExit_( Fun f )
+		: f_(f)
 	{ }
 
-	~ScopeExit() {
-		funType_();
+	ScopeExit_(ScopeExit_&& other)
+		: f_(std::move(other.f_))
+	{ 
+	}
+
+	~ScopeExit_() {
+		f_();
 	}
 
 private :
-	boost::function0<void> funType_;
+	Fun f_;
 
-	ScopeExit( const ScopeExit& );
-	ScopeExit& operator=( const ScopeExit& );
+	ScopeExit_(const ScopeExit_&) = delete;
+	ScopeExit_& operator=(const ScopeExit_&) = delete;
 };
+
+template <typename Fun>
+ScopeExit_<Fun> ScopeExit(Fun f)
+{
+	return ScopeExit_<Fun>(f); 
+}

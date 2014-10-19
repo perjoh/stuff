@@ -2,10 +2,10 @@
 
 namespace raytracer {
 
-		IntersectResult Sphere::intersectNearest( const Ray& ) const 
+		/*IntersectResult Sphere::intersectNearest( const Ray& ) const 
 		{
 			return IntersectResult(); 
-		}
+		}*/
 
 
 		IntersectResult Sphere::intersectNearest( const Line& line ) const 

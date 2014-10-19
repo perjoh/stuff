@@ -20,5 +20,7 @@ namespace raytracer {
 	typedef math3d::vector<Float, 3> Normal;
 	typedef math3d::intersect::Intersection<Float> Intersection;
 
-	typedef math3d::vector<float, 3> Pixel;
+	typedef math3d::vector<float, 3> Color;
+
+	typedef std::pair<unsigned int, unsigned int> ScreenCoordinate;
 }

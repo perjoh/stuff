@@ -15,10 +15,10 @@ namespace raytracer {
 		setupSpacePartitioning();
 	}
 
-	IntersectResult TriangleMesh::intersectNearest( const Ray& ray ) const 
+	/*IntersectResult TriangleMesh::intersectNearest( const Ray& ray ) const 
 	{
 		return intersectNearestImpl( ray );
-	}
+	}*/
 
 	IntersectResult TriangleMesh::intersectNearest( const Line& line ) const 
 	{
@@ -30,9 +30,11 @@ namespace raytracer {
 		BoundingBox box;
 
 		if ( !triangles_.empty() )
+		{
 			box = BoundingBox( 
 					triangles_[0].min(), 
 					triangles_[0].max() );
+		}
 
 		for ( const Triangle& triangle : triangles_ )
 		{

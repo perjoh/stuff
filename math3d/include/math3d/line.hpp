@@ -17,6 +17,9 @@ namespace math3d
 		typedef typename ray_type::vector_type vector_type;
 
 	public :
+		Line()
+		{ }
+
 		Line(const vector_type& p1, const vector_type& p2) :
 			ray_( p1, norm( p2 - p1 ) ),
 			max_t_( vec_length( p2 - p1 ) )

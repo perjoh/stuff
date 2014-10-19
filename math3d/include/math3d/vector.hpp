@@ -489,6 +489,13 @@ namespace math3d
 		return v_;
 	}
 
+	template <typename V>
+	V& norm(V& v)
+	{
+		v.norm();
+		return v;
+	}
+
 	//! Length
 	template <typename V>
 	typename V::value_type vec_length( const V& v )

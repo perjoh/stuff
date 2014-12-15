@@ -4,18 +4,20 @@
 
 namespace raytracer {
 
+	typedef Point2d<unsigned int> ScreenDim;
+
 	class RayGenerator
 	{
 	public :
 		RayGenerator(
-			const ScreenCoordinate& screenSize,
+			const ScreenDim& screenDim,
 			const Camera& camera);
 
-		const std::vector<Line>& generateRays( const ScreenCoordinate& ) const;
+		const std::vector<Line>& generateRays( const ScreenDim& ) const;
 
 	private :
 		std::vector<Line> rays_;
-		ScreenCoordinate screenDim_;
+		ScreenDim screenDim_;
 		Camera camera_;
 	};
 

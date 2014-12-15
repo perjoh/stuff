@@ -22,5 +22,17 @@ namespace raytracer {
 
 	typedef math3d::vector<float, 3> Color;
 
-	typedef std::pair<unsigned int, unsigned int> ScreenCoordinate;
+	template <typename T>
+	struct Point2d
+	{
+		Point2d(T x_, T y_)
+			: x(x_)
+			, y(y_)
+		{}
+
+		T x, y;
+	};
+
+	typedef Point2d<unsigned int> ScreenCoordinate;
+
 }

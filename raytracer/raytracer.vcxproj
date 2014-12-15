@@ -37,16 +37,18 @@
     <ClInclude Include="src\KdTree.hpp" />
     <ClInclude Include="src\RayGenerator.hpp" />
     <ClInclude Include="src\RayTracable.hpp" />
+    <ClInclude Include="src\RayTracer.hpp" />
     <ClInclude Include="src\RayTracerOutput.hpp" />
     <ClInclude Include="src\SceneImporter.hpp" />
     <ClInclude Include="src\ScopeExit.hpp" />
     <ClInclude Include="src\Sphere.hpp" />
     <ClInclude Include="src\TestSceneGenerator.hpp" />
     <ClInclude Include="src\TriangleMesh.hpp" />
+    <ClInclude Include="src\WorkQueue.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\App.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -54,11 +56,15 @@
     <ClCompile Include="src\SceneImporter.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\Sphere.cpp" />
+    <ClCompile Include="src\Sphere.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\TestSceneGenerator.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\TriangleMesh.cpp" />
+    <ClCompile Include="src\TriangleMesh.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2A798F6E-3102-4C93-8ACA-BA71E656C1E1}</ProjectGuid>
